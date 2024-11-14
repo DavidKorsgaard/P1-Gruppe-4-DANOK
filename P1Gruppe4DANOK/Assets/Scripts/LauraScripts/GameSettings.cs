@@ -36,8 +36,8 @@ public class GameSettings : MonoBehaviour
     private void Start()
     {
         //button click "listeners" 
-        //calibrateButton.onClick.AddListener(Calibrate);
-        //startTestButton.onClick.AddListener.(StartTest);
+        calibrateButton.onClick.AddListener(Calibrate);
+        startTestButton.onClick.AddListener.(StartTest);
 
         //default values for sliders 
         volumeSlider.value = 50;
