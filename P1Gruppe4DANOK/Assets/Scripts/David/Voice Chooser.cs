@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< HEAD
-
-=======
 public class VoiceChooser : MonoBehaviour
 {
     public AudioSource thisPlaying;
@@ -23,4 +20,4 @@ public class VoiceChooser : MonoBehaviour
         }
     }
 }
->>>>>>> 8c73d8dff5fcd1687f6eb2ecad50f4e2e60e6584
+
