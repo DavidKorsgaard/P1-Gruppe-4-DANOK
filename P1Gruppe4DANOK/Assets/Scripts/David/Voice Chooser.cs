@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class VoiceChooser : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioSource 
     void Start()
     {
-        
+        Pu
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
