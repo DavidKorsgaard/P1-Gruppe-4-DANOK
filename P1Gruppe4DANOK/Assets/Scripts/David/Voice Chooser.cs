@@ -4,20 +4,46 @@ using UnityEngine;
 
 public class VoiceChooser : MonoBehaviour
 {
-    public AudioSource thisPlaying;
-    public bool isPlaying;
-    public AudioClip[] myClips; // Skiftet fra ArrayList[] til AudioClip[]
+    
+    
+        public AudioSource thisPlaying;
+        public bool isPlaying;
+        public AudioClip[] myClips; // Skiftet fra ArrayList[] til AudioClip[]
 
-    private void Start()
-    {
-        // Loader alle AudioClip-filer fra mappen "Resources/audio/foo"
-        myClips = Resources.LoadAll<AudioClip>("audio/foo");
-
-        // Debugging: Tjek om klippene er blevet loadet korrekt
-        foreach (var clip in myClips)
+        private void Start()
         {
-            Debug.Log("Loaded AudioClip: " + clip.name);
+            // Loader alle AudioClip-filer fra mappen "Resources/audio/foo"
+            myClips = Resources.LoadAll<AudioClip>("Audio");
+
+            // Debugging: Tjek om klippene er blevet loadet korrekt
+            foreach (var clip in myClips)
+            {
+                Debug.Log("Loaded AudioClip: " + clip.name);
+            }
         }
-    }
+        public void PlayRandomClip()
+        {
+            if (myClips.Length == 0)
+            {
+                Debug.LogWarning("No clips loaded!");
+                return;
+            }
+
+            // Vælg et tilfældigt klip fra arrayet
+            AudioClip randomClip = myClips[Random.Range(0, myClips.Length)];
+
+            // Sæt klippet som AudioSource's clip og spil det
+            thisPlaying.clip = randomClip;
+            thisPlaying.Play();
+
+            Debug.Log("Now playing: " + randomClip.name);
+        }
+        public void OnPlayButtonClicked()
+        {
+            PlayRandomClip();
+        }
+    
+
+
 }
 
