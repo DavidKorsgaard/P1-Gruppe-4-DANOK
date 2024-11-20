@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameSettings : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class GameSettings : MonoBehaviour
     public Toggle[] secondConsonants;
 
     //variable for displaying amount of words relative to selected letters
-    public Text wordCountText;
+    public TextMeshProUGUI wordCountText;
 
     //buttons for actions
     public Button calibrateButton;
