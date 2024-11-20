@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 212492202}
   - component: {fileID: 212492201}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: StartSpilButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,10 +156,10 @@ RectTransform:
   - {fileID: 1269812641}
   m_Father: {fileID: 425363277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -303}
-  m_SizeDelta: {x: 506.0981, y: 120.5165}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 506.0981, y: 120.51651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212492201
 MonoBehaviour:
@@ -777,10 +777,10 @@ RectTransform:
   - {fileID: 1970328947}
   m_Father: {fileID: 267868492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -464, y: 28.241}
-  m_SizeDelta: {x: 394.5538, y: 56.4819}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -220}
+  m_SizeDelta: {x: 394.5538, y: 56.481903}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966411454
 MonoBehaviour:
@@ -1234,10 +1234,10 @@ RectTransform:
   - {fileID: 593483665}
   m_Father: {fileID: 267868492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -464, y: 221}
-  m_SizeDelta: {x: 394.5538, y: 56.4819}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -100}
+  m_SizeDelta: {x: 394.5538, y: 56.481903}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003765804
 MonoBehaviour:
