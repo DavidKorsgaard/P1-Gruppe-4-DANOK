@@ -7,12 +7,11 @@ public class VoiceChooser : MonoBehaviour
     
     
         public AudioSource thisPlaying;
-        public bool isPlaying;
         public AudioClip[] myClips; // Skiftet fra ArrayList[] til AudioClip[]
 
         private void Start()
         {
-            // Loader alle AudioClip-filer fra mappen "Resources/audio/foo"
+            // Loader alle AudioClip-filer fra mappen "Resources/Audio"
             myClips = Resources.LoadAll<AudioClip>("Audio");
 
             // Debugging: Tjek om klippene er blevet loadet korrekt
