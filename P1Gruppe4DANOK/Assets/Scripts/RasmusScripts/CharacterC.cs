@@ -11,6 +11,12 @@ public class CharacterC : MonoBehaviour
     public static List<string> namesOfHats = new List<string>();
     public static List<string> namesOfBottoms = new List<string>();
 
+    public static class CharacterSelection
+    {
+        public static string selectedHat { get; set; }
+        public static string selectedBottom { get; set; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,12 +40,12 @@ public class CharacterC : MonoBehaviour
         }    
     }
 
-    public void OnChangeHatButtonClick()
+    public void OnChangeHatButtonClick() // Clickable button for switching between the hat array
     {
             ChangeHat();
     }
 
-    public void OnChangeBottomButtonClick()
+    public void OnChangeBottomButtonClick() // Clickable button for switching between the bottom array
     {
             ChangeBottom();
     }
@@ -67,6 +73,9 @@ public class CharacterC : MonoBehaviour
         string selectedHat = hats[currentHatIndex].name;
         string selectedBottom = bottoms[currentBottomIndex].name;
         Debug.Log("Confirmed selections: Hat - " + selectedHat + ", Bottom - " + selectedBottom);
+
+        CharacterSelection.selectedHat = selectedHat; //Saves the Hat for the next scene
+        CharacterSelection.selectedBottom = selectedBottom;  //Saves the Bottom for the next scene  
     }
     // Update is called once per frame
     void Update()
