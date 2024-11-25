@@ -8,75 +8,60 @@ public class CharacterC : MonoBehaviour
     public GameObject[] bottoms; // Array to hold bottoms
     private int currentHatIndex = 0;
     private int currentBottomIndex = 0;
-    public static List<string> namesOfHats = new List<string>();
-    public static List<string> namesOfBottoms = new List<string>();
 
-    public static class CharacterSelection
-    {
-        public static string selectedHat { get; set; }
-        public static string selectedBottom { get; set; }
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hats array length: " + hats.Length);
-        Debug.Log("Bottoms array length: " + bottoms.Length);
-
-        if(hats.Length > 0)
+        if (hats.Length > 0)
         {
             for (int i = 0; i < hats.Length; i++)
             {
                 hats[i].SetActive(i == currentHatIndex); // Shows the active hat from index
             }
         }
-        if(bottoms.Length > 0)
+        if (bottoms.Length > 0)
         {
             for (int i = 0; i < bottoms.Length; i++)
             {
                 bottoms[i].SetActive(i == currentBottomIndex); // Shows the active bottom from index
-                
             }
-        }    
+        }
     }
 
-    public void OnChangeHatButtonClick() // Clickable button for switching between the hat array
+    public void OnChangeHatButtonClick()
     {
-            ChangeHat();
+        ChangeHat();
     }
 
-    public void OnChangeBottomButtonClick() // Clickable button for switching between the bottom array
+    public void OnChangeBottomButtonClick()
     {
-            ChangeBottom();
+        ChangeBottom();
     }
 
     public void ChangeHat()
     {
-        Debug.Log("Current Hat Index: " + currentHatIndex);
-        if (hats.Length == 0) return; // To stop from checking empty arrays for hats
-        hats[currentHatIndex].SetActive(false); // Deactivate the current hat
+        if (hats.Length == 0) return; // Prevent accessing an empty array
+        hats[currentHatIndex].SetActive(false); // Deactivate the currently shown hat
         currentHatIndex = (currentHatIndex + 1) % hats.Length; // Move on to the next hat in the array
         hats[currentHatIndex].SetActive(true); // Activate the new hat
     }
 
     public void ChangeBottom()
     {
-        Debug.Log("Current Bottom Index: " + currentBottomIndex);
-        if (bottoms.Length == 0) return; // To stop from checking empty arrays for bottoms
-        bottoms[currentBottomIndex].SetActive(false); // Deactivate the current bottom
+        if (bottoms.Length == 0) return; // Prevent accessing an empty array
+        bottoms[currentBottomIndex].SetActive(false); // Deactivate the currently shown bottom
         currentBottomIndex = (currentBottomIndex + 1) % bottoms.Length; // Move on to the next bottom in the array
         bottoms[currentBottomIndex].SetActive(true); // Activate the new bottom
     }
 
     public void ConfirmSelection()
     {
-        string selectedHat = hats[currentHatIndex].name;
-        string selectedBottom = bottoms[currentBottomIndex].name;
-        Debug.Log("Confirmed selections: Hat - " + selectedHat + ", Bottom - " + selectedBottom);
+        // Save the indices of the selected hat and bottom
+        CharacterSelection.SelectedHatIndex = currentHatIndex;
+        CharacterSelection.SelectedBottomIndex = currentBottomIndex;
 
-        CharacterSelection.selectedHat = selectedHat; //Saves the Hat for the next scene
-        CharacterSelection.selectedBottom = selectedBottom;  //Saves the Bottom for the next scene  
+        Debug.Log("Confirmed selections: Hat Index - " + currentHatIndex + ", Bottom Index - " + currentBottomIndex);
     }
+
     // Update is called once per frame
     void Update()
     {
