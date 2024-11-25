@@ -26,7 +26,7 @@ public class SettingsDesign : MonoBehaviour
                 // Change the background color
                 backgroundImage.color = newColor;
             }
-            if (Checkmark.i)
+          
         }
     }
 }
