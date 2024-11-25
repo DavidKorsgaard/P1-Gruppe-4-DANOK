@@ -15288,8 +15288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe4abc78d51779439d52f478d2caaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newColor: {r: 1, g: 0.035848916, b: 0.84011513, a: 1}
+  newColor: {r: 0.5372549, g: 0.60784316, b: 0.77647066, a: 1}
   toggleParent: {fileID: 70671196}
+  newImage: {fileID: 0}
 --- !u!4 &1978828367
 Transform:
   m_ObjectHideFlags: 0
