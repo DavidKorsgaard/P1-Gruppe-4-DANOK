@@ -302,8 +302,8 @@ GameObject:
   m_Component:
   - component: {fileID: 873184515}
   - component: {fileID: 873184516}
-  - component: {fileID: 873184517}
   - component: {fileID: 873184518}
+  - component: {fileID: 873184520}
   m_Layer: 0
   m_Name: Audiomanager
   m_TagString: Audio
@@ -340,21 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a951e8660b8fe4f4b953bc76da046322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &873184517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873184514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a250b88dae27544e9b5ad4d2547e33e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisPlaying: {fileID: 873184518}
-  isPlaying: 0
-  myClips: []
 --- !u!82 &873184518
 AudioSource:
   m_ObjectHideFlags: 0
@@ -451,6 +436,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &873184520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873184514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a7cfc80fee7f84fa6c7921a7c66b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClips: []
+  Logic: {fileID: 0}
+  wordGenerator: {fileID: 0}
 --- !u!1 &1509132088
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ GameObject:
   - component: {fileID: 1509132089}
   - component: {fileID: 1509132090}
   m_Layer: 0
-  m_Name: Voice_Sound
+  m_Name: Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,102 +484,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 873184515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1509132090
-AudioSource:
+--- !u!114 &1509132090
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509132088}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e57f6a1c8142e4cac92a757a12828d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChosenWord: 
+  DanokWordTxt: {fileID: 0}
+  LetterString: 
+  VoicePlayer: {fileID: 0}
+  SpeechScript: {fileID: 0}
 --- !u!1 &1723494596
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,9 +806,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 873184517}
+      - m_Target: {fileID: 873184520}
         m_TargetAssemblyTypeName: VoiceChooser, Assembly-CSharp
-        m_MethodName: PlayRandomClip
+        m_MethodName: OnPlayButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
