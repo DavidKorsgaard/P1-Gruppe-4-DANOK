@@ -34,6 +34,7 @@ public class WordGenerator : MonoBehaviour
         SpeechScript = VoicePlayer.GetComponent<VoiceChooser>();
         
 
+
         DanokWords = new string[SpeechScript.audioClips.Length];
 
         for (int i = 0; i < SpeechScript.audioClips.Length; i++)
@@ -69,12 +70,11 @@ public class WordGenerator : MonoBehaviour
         //Sets the Consonants Array and DanokWords Array to the same as ConsonantInt.
         Debug.LogFormat("The Consonant is: {0} and the word is: {1}", Consonants[ConsonantInt], DanokWords[ConsonantInt]);
 
-        //DanokWordTxt.text = "ba?i";
+        DanokWordTxt.text = "ba?i";
         ChosenWord = DanokWords[ConsonantInt];
         Debug.LogFormat(ChosenWord);
         LetterString = Consonants[ConsonantInt];
         Debug.LogFormat("LetterString = {0}", LetterString);
-        DanokWordTxt.text = "Ba?i";
         SpeechScript.PlayAudio();
     }
 }
