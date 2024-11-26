@@ -1,31 +1,28 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System;
 using System.IO;
 
 public class ScreenshotManager : MonoBehaviour
 {
-    public string screenshotFileName = "screenshot.png";
+    private static string screenshotPath;
 
-    public void TakeScreenshot()
+    public void CaptureScreenshot()
     {
-        StartCoroutine(CaptureScreenshot());
+        // Get the Pictures folder path
+        string picturesPath = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+        // Create a unique filename
+        string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+        screenshotPath = Path.Combine(picturesPath, "screenshot_" + timestamp + ".png");
+
+        // Save the screenshot
+        ScreenCapture.CaptureScreenshot(screenshotPath);
+        Debug.Log("Screenshot saved at: " + screenshotPath);
     }
 
-    private IEnumerator CaptureScreenshot()
+    public static string GetScreenshotPath()
     {
-        // Wait for the end of the frame to ensure everything is rendered
-        yield return new WaitForEndOfFrame();
-
-        // Capture the screenshot
-        string filePath = Path.Combine(Application.persistentDataPath, screenshotFileName);
-        ScreenCapture.CaptureScreenshot(filePath);
-
-        // Wait for the screenshot to be saved
-        yield return new WaitForSeconds(0.5f);
-
-        // Load the next scene
-        SceneManager.LoadScene("DisplayScreenshotScene");
-        
+        return screenshotPath;
     }
 }
+
