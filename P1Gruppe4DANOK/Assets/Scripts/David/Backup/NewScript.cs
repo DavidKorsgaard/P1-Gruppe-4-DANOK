@@ -1,8 +1,7 @@
-/*
 using UnityEngine;
 using System.Collections.Generic;
 
-public class VoiceChooser : MonoBehaviour
+public class VoiceMaker : MonoBehaviour
 {
     public AudioSource audioSource;          // Reference til AudioSource
     public AudioClip[] audioClips;           // Array med alle AudioClips
@@ -30,7 +29,7 @@ public class VoiceChooser : MonoBehaviour
                 audioClipMap.Add(audioClip.name, audioClip);
             }
         }
-        Linqtestdocument.Fileloader();
+        
         Debug.Log($"Loaded {audioClips.Length} audio clips.");
     }
     /*
@@ -79,6 +78,5 @@ public class VoiceChooser : MonoBehaviour
     {
         PlayRandomClip();
     }
-    
-}   
-*/
+    */
+}

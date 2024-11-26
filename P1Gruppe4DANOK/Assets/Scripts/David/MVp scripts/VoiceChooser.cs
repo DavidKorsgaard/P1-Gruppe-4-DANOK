@@ -1,4 +1,4 @@
-/*
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -10,15 +10,15 @@ public class VoiceChooser : MonoBehaviour
 
     private string audioClipName;            // Dynamisk genereret navn på lydklip
     public GameObject Logic;                 // Reference til Logic-objektet
-    public Linqtestdocument Linqtestdocument;      // Reference til WordGenerator-scriptet
+    public WordGenerator WordGenerator;      // Reference til WordGenerator-scriptet
     private string[] Voices = { "_F1", "_F2", "_M1", "_M2" }; // Stemmetyper
 
-    void Start()
+    void Awake()
     {
         // Initialiser komponenter og references
         audioSource = GetComponent<AudioSource>();
         Logic = GameObject.Find("Logic");
-        Linqtestdocument = Logic.GetComponent<Linqtestdocument>();
+        WordGenerator = Logic.GetComponent<WordGenerator>();
         audioClips = Resources.LoadAll<AudioClip>("Audio");
 
         // Initialiser dictionary til at mappe lydklip med deres navne
@@ -30,13 +30,12 @@ public class VoiceChooser : MonoBehaviour
                 audioClipMap.Add(audioClip.name, audioClip);
             }
         }
-        Linqtestdocument.Fileloader();
         Debug.Log($"Loaded {audioClips.Length} audio clips.");
     }
-    /*
+    
     public void PlayAudio()
     {
-        if (Linqtestdocument == null)
+        if (WordGenerator == null)
         {
             Debug.LogError("WordGenerator is not assigned.");
             return;
@@ -44,7 +43,7 @@ public class VoiceChooser : MonoBehaviour
 
         // Vælg en tilfældig stemme
         int randomIndex = Random.Range(0, Voices.Length);
-        audioClipName = Linqtestdocument.ChosenWord + Voices[randomIndex];
+        audioClipName = WordGenerator.ChosenWord + Voices[randomIndex];
         Debug.Log("Generated AudioClipName: " + audioClipName);
 
         // Spil lydklippet, hvis det findes i mappen
@@ -80,5 +79,4 @@ public class VoiceChooser : MonoBehaviour
         PlayRandomClip();
     }
     
-}   
-*/
+}

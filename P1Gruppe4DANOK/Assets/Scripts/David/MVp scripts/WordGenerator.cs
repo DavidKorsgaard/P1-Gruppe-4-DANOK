@@ -32,6 +32,7 @@ public class WordGenerator : MonoBehaviour
     {
         VoicePlayer = GameObject.Find("Audiomanager");
         SpeechScript = VoicePlayer.GetComponent<VoiceChooser>();
+        
 
         DanokWords = new string[SpeechScript.audioClips.Length];
 
@@ -73,6 +74,7 @@ public class WordGenerator : MonoBehaviour
         Debug.LogFormat(ChosenWord);
         LetterString = Consonants[ConsonantInt];
         Debug.LogFormat("LetterString = {0}", LetterString);
+        DanokWordTxt.text = "Ba?i";
         SpeechScript.PlayAudio();
     }
 }
