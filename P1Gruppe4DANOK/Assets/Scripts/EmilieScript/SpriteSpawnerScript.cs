@@ -26,10 +26,10 @@ public class SpriteSpawnerScript : MonoBehaviour
         }
     }
 
-    // Method to handle every button click
+    
     public void OnButtonClick()
     {
-        // Increment click count
+        //click count
         clickCount++;
 
         // Every second click, spawn an image
@@ -49,30 +49,33 @@ public class SpriteSpawnerScript : MonoBehaviour
         }
     }
 
-    // Method to spawn an image in the panel
+
     private void SpawnImage()
     {
         if (spriteImages.Length == 0) return;
 
-        Vector2 spawnSize = spawnPanel.sizeDelta;
-        Vector2 spawnPosition = new Vector2(
-            Random.Range(-spawnSize.x / 2, spawnSize.x / 2),
-            Random.Range(-spawnSize.y / 2, spawnSize.y / 2)
+        // Calculate the world-space corners of the spawn panel
+        Vector3[] corners = new Vector3[4];
+        spawnPanel.GetWorldCorners(corners);
+
+        // Generate a random position within the bounds of the panel
+        Vector3 spawnPosition = new Vector3(
+            Random.Range(corners[0].x, corners[2].x), // Random X between left and right corners
+            Random.Range(corners[0].y, corners[2].y), // Random Y between bottom and top corners
+            corners[0].z // Keep the same Z position
         );
 
-        // Convert local spawn position to world space
-        Vector3 worldPosition = spawnPanel.TransformPoint(spawnPosition);
-
-        // Instantiate the image at the calculated world position
-        GameObject newImage = Instantiate(spriteImages[spriteIndex], worldPosition, Quaternion.identity, spawnPanel);
+        // Instantiate the sprite image
+        GameObject newImage = Instantiate(spriteImages[spriteIndex], spawnPosition, Quaternion.identity, spawnPanel);
 
         if (newImage != null)
         {
-            // Set the local position of the image inside the spawn panel
+            // Ensure the image stays in its local hierarchy
             RectTransform rectTransform = newImage.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                rectTransform.anchoredPosition = spawnPosition; // Set the anchored position in the panel
+                // Convert world position to local position relative to the spawnPanel
+                rectTransform.anchoredPosition = spawnPanel.InverseTransformPoint(spawnPosition);
             }
 
             // Add the image to the list of spawned images
@@ -87,7 +90,7 @@ public class SpriteSpawnerScript : MonoBehaviour
         }
     }
 
-    // Method to clear all spawned images
+
     private void ClearImages()
     {
         foreach (GameObject image in spawnedImages)
