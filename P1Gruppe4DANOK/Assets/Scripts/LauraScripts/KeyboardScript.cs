@@ -27,7 +27,7 @@ public class KeyboardScript : MonoBehaviour
         VoicePlayer = GameObject.Find("Audiomanager");
         SpeechScript = VoicePlayer.GetComponent<VoiceChooser>();
         // Clear the display panel at the start
-        displayPanelText.text = "";
+        
         Logic = GameObject.Find("Logic");
         wordGenerator = Logic.GetComponent<WordGenerator>();
 

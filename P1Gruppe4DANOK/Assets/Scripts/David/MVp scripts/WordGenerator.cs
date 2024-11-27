@@ -30,6 +30,7 @@ public class WordGenerator : MonoBehaviour
 
     void Start()
     {
+        DanokWordTxt.text = "ba?i";
         VoicePlayer = GameObject.Find("Audiomanager");
         SpeechScript = VoicePlayer.GetComponent<VoiceChooser>();
         
