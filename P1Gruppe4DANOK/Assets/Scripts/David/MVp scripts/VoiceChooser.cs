@@ -12,8 +12,9 @@ public class VoiceChooser : MonoBehaviour
     public GameObject Logic;                 // Reference til Logic-objektet
     public WordGenerator WordGenerator;      // Reference til WordGenerator-scriptet
     private string[] Voices = { "_F1", "_F2", "_M1", "_M2" }; // Stemmetyper
-    
 
+    public GameObject ThumbsUp;
+    public GameObject ThumbsDown;
     void Awake()
     {
         // Initialiser komponenter og references

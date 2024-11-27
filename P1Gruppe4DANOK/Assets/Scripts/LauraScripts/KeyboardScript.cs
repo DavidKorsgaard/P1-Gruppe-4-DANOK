@@ -16,8 +16,7 @@ public class KeyboardScript : MonoBehaviour
     AudioSource SFXPlayer;
     public VoiceChooser SpeechScript;
     public GameObject VoicePlayer;
-    private Button button;
-    private bool isOnCooldown = false; 
+    private bool isOnCooldown = false;
     private bool isOnCooldownSkip = false;
     public float cooldownTime = 7f;
     public float cooldownTimeSkip = 4f;
@@ -31,8 +30,8 @@ public class KeyboardScript : MonoBehaviour
         displayPanelText.text = "";
         Logic = GameObject.Find("Logic");
         wordGenerator = Logic.GetComponent<WordGenerator>();
-        
-        
+
+
     }
 
     // This function will be called by each keyboard button
@@ -45,10 +44,11 @@ public class KeyboardScript : MonoBehaviour
     {
         Letter = wordGenerator.LetterString;
         buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-        
+
         if (Letter == buttonText.text)
         {
             Debug.Log("Correct answer!");
+            ShowThumbsUp();
             wordGenerator.DanokWordTxt.text = wordGenerator.ChosenWord;
             if (!isOnCooldown)
             {
@@ -64,21 +64,12 @@ public class KeyboardScript : MonoBehaviour
         }
         else
         {
+            ShowThumbsDown();
             Debug.Log("Wrong! Try again.");
         }
-        
-    }
-    private void StartCooldown()
-    {
-        isOnCooldown = true;
-        Invoke("ResetCooldown", cooldownTime);
-    }
 
-    private void ResetCooldown()
-    {
-        isOnCooldown = false;
-        Debug.Log("Cooldown reset. Button can be pressed again.");
     }
+    
 
     void NextWord()
     {
@@ -94,23 +85,34 @@ public class KeyboardScript : MonoBehaviour
         else
         {
             Debug.LogError("VoiceChooser is null. Cannot play audio!");
-        }   
+        }
     }
     public void Skip()
     {
-        
+
         if (!isOnCooldownSkip)
         {
             Debug.Log("Skip");
             NextWord();
             StartCooldownSkip();
-            
+
         }
         else
         {
             Debug.Log("Button is on cooldown! Please wait.");
         }
 
+    }
+    private void StartCooldown()
+    {
+        isOnCooldown = true;
+        Invoke("ResetCooldown", cooldownTime);
+    }
+
+    private void ResetCooldown()
+    {
+        isOnCooldown = false;
+        Debug.Log("Cooldown reset. Button can be pressed again.");
     }
     private void StartCooldownSkip()
     {
@@ -123,6 +125,23 @@ public class KeyboardScript : MonoBehaviour
         isOnCooldownSkip = false;
         Debug.Log("Cooldown Skip reset. Button can be pressed again.");
     }
-
+    private void ShowThumbsUp()
+    {
+        SpeechScript.ThumbsUp.SetActive(true);
+        Invoke("HideThumbsUp", 1f);
+    }
+    private void HideThumbsUp()
+    {
+        SpeechScript.ThumbsUp.SetActive(false);
+    }
+    private void ShowThumbsDown()
+    {
+        SpeechScript.ThumbsDown.SetActive(true);
+        Invoke("HideThumbsDown", 1f);
+    }
+    private void HideThumbsDown()
+    {
+        SpeechScript.ThumbsDown.SetActive(false);
+    }
 }
 
