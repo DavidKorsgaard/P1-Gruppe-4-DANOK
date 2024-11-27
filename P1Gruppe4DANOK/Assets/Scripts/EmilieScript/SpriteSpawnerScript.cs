@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class SpriteSpawnerScript : MonoBehaviour
 {
-    [SerializeField] private GameObject spritePrefab; // Prefab of the sprite to spawn
-    [SerializeField] private Transform spawnParent; // Parent object to hold spawned sprites
-    [SerializeField] private Vector2 spawnArea; // Width and height of spawnable area for sprites
-    [SerializeField] private Sprite[] desiredSprites; // Array of sprites to use for spawning (sprite 1, sprite 2, sprite 3, sprite 4)
+    [SerializeField] private GameObject[] spriteImages; // Array of UI images to spawn
+    [SerializeField] private RectTransform spawnPanel; // The panel where the images will be spawned
 
     private int clickCount = 0; // Tracks the number of clicks
-    private List<GameObject> spawnedSprites = new List<GameObject>(); // Keeps track of spawned sprites
+    private List<GameObject> spawnedImages = new List<GameObject>(); // Keeps track of spawned images
     private int spriteIndex = 0; // Tracks the current sprite to use
 
     private void Start()
     {
-        // Make sure that the prefab is assigned
-        if (spritePrefab == null)
+        // Ensure all sprite images are assigned
+        if (spriteImages == null || spriteImages.Length == 0)
         {
-            Debug.LogWarning("Sprite Prefab is not assigned!");
+            Debug.LogWarning("No sprite images assigned!");
         }
 
-        // Make sure the spawnParent is assigned
-        if (spawnParent == null)
+        // Make sure spawnPanel is assigned
+        if (spawnPanel == null)
         {
-            Debug.LogWarning("Spawn Parent is not assigned!");
+            Debug.LogWarning("Spawn Panel is not assigned!");
         }
     }
 
@@ -34,71 +32,70 @@ public class SpriteSpawnerScript : MonoBehaviour
         // Increment click count
         clickCount++;
 
-        // Every second click, spawn a sprite
+        // Every second click, spawn an image
         if (clickCount % 2 == 0)
         {
-            // Check if there are already 4 sprites on screen
-            if (spawnedSprites.Count >= 4)
+            // Check if all images are spawned
+            if (spawnedImages.Count >= spriteImages.Length)
             {
-                ClearSprites(); // Clear all sprites
+                // Clear the spawned images and reset
+                ClearImages();
             }
             else
             {
-                SpawnSprite(); // Spawn a new sprite
+                // Spawn the next image in the sequence
+                SpawnImage();
             }
         }
     }
 
-    // Method to spawn a sprite
-    private void SpawnSprite()
+    // Method to spawn an image in the panel
+    private void SpawnImage()
     {
-        // Origin point for spawning
-        Vector3 originPoint = new Vector3(-60f, -200f, 0f);  
+        if (spriteImages.Length == 0) return;
 
-        // Randomize position within the specified spawn area, relative to the origin point
-        Vector3 spawnPosition = new Vector3(
-            originPoint.x + Random.Range(-spawnArea.x / 2, spawnArea.x / 2), // Randomize X
-            originPoint.y + Random.Range(-spawnArea.y / 2, spawnArea.y / 2), // Randomize Y
-            0 // Ensure Z position
+        Vector2 spawnSize = spawnPanel.sizeDelta;
+        Vector2 spawnPosition = new Vector2(
+            Random.Range(-spawnSize.x / 2, spawnSize.x / 2),
+            Random.Range(-spawnSize.y / 2, spawnSize.y / 2)
         );
 
-        // Instantiate the sprite prefab
-        GameObject newSprite = Instantiate(spritePrefab, spawnPosition, Quaternion.identity, spawnParent);
+        // Convert local spawn position to world space
+        Vector3 worldPosition = spawnPanel.TransformPoint(spawnPosition);
 
-        if (newSprite != null)
+        // Instantiate the image at the calculated world position
+        GameObject newImage = Instantiate(spriteImages[spriteIndex], worldPosition, Quaternion.identity, spawnPanel);
+
+        if (newImage != null)
         {
-            // Set the sprite for the SpriteRenderer
-            SpriteRenderer spriteRenderer = newSprite.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null && desiredSprites.Length > 0)
+            // Set the local position of the image inside the spawn panel
+            RectTransform rectTransform = newImage.GetComponent<RectTransform>();
+            if (rectTransform != null)
             {
-                spriteRenderer.sprite = desiredSprites[spriteIndex];
-
-                // Update the sprite index (loop back to the start if needed)
-                spriteIndex = (spriteIndex + 1) % desiredSprites.Length;
-            }
-            else
-            {
-                Debug.LogWarning("SpriteRenderer component not found or desiredSprites array is empty.");
+                rectTransform.anchoredPosition = spawnPosition; // Set the anchored position in the panel
             }
 
-            // Add the sprite to the list
-            spawnedSprites.Add(newSprite);
+            // Add the image to the list of spawned images
+            spawnedImages.Add(newImage);
+
+            // Update the image index (loop back to the start if needed)
+            spriteIndex = (spriteIndex + 1) % spriteImages.Length;
         }
         else
         {
-            Debug.LogWarning("Failed to instantiate sprite.");
+            Debug.LogWarning("Failed to instantiate image.");
         }
     }
 
-    // Method to clear all spawned sprites
-    private void ClearSprites()
+    // Method to clear all spawned images
+    private void ClearImages()
     {
-        foreach (GameObject sprite in spawnedSprites)
+        foreach (GameObject image in spawnedImages)
         {
-            Destroy(sprite); // Destroy each sprite
+            Destroy(image); // Destroy each image
         }
 
-        spawnedSprites.Clear(); // Clear the list
-        Debug.Log("All sprites cleared.");
+        spawnedImages.Clear(); // Clear the list
+        Debug.Log("All images cleared.");
     }
 }
