@@ -4,27 +4,72 @@ using System.IO;
 
 public class DisplayScreenshot : MonoBehaviour
 {
-    public Image screenshotImage; // Assign this in the Inspector
+    public Image galleryImage;  // Reference to the Image component in the gallery where the selfie will be displayed
 
-    private void Start()
+    private string screenshotFolder;
+
+    void Start()
     {
-        // Get the screenshot path from ScreenshotManager
-        string path = ScreenshotManager.GetScreenshotPath();
+        // Set the folder where screenshots are saved (Pictures/Selfies folder)
+        screenshotFolder = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Selfies");
 
-        if (File.Exists(path))
+        // Ensure the folder exists
+        if (!Directory.Exists(screenshotFolder))
         {
-            // Load the screenshot file
-            byte[] imageBytes = File.ReadAllBytes(path);
-            Texture2D texture = new Texture2D(2, 2);
-            texture.LoadImage(imageBytes);
+            Directory.CreateDirectory(screenshotFolder);
+        }
 
-            // Set the texture as a sprite
-            screenshotImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-        }
-        else
+        // Load the most recent screenshot when the game starts (or whenever you want)
+        LoadLatestScreenshot();
+    }
+
+    // Load the most recent screenshot into the gallery
+    private void LoadLatestScreenshot()
+    {
+        // Get all the screenshot files in the "Selfies" folder
+        string[] files = Directory.GetFiles(screenshotFolder, "*.png");
+
+        // If there are no screenshots, exit
+        if (files.Length == 0)
         {
-            Debug.LogWarning("Screenshot not found at: " + path);
+            Debug.LogWarning("No screenshots found in the folder.");
+            return;
         }
+
+        // Get the most recent screenshot (last in the list)
+        string latestScreenshot = files[files.Length - 1];
+
+        // Load and display the most recent screenshot
+        DisplayImage(latestScreenshot);
+    }
+
+    // Method to display the image in the gallery (UI Image component)
+    private void DisplayImage(string path)
+    {
+        // Load the texture from the file
+        Texture2D texture = LoadTextureFromPath(path);
+        if (texture == null) return;
+
+        // Convert texture to a sprite and assign to the gallery Image component
+        Sprite newSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+        galleryImage.sprite = newSprite;
+    }
+
+    // Helper method to load a texture from the file path
+    private Texture2D LoadTextureFromPath(string path)
+    {
+        if (!File.Exists(path))
+        {
+            Debug.LogError($"File not found: {path}");
+            return null;
+        }
+
+        byte[] fileData = File.ReadAllBytes(path);
+        Texture2D texture = new Texture2D(2, 2);
+        if (texture.LoadImage(fileData))
+        {
+            return texture;
+        }
+        return null;
     }
 }
-
