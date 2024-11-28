@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1429840114407247789}
   - component: {fileID: 4820579575906550383}
+  - component: {fileID: 6751440744114867233}
   m_Layer: 0
   m_Name: Character Sheet
   m_TagString: Player
@@ -51,6 +52,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b4043dd05d62cb4893f64f384715d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hats:
+  - {fileID: 5643306701558397006}
+  - {fileID: 380085650779104692}
+  - {fileID: 890297170485429426}
+  - {fileID: 7853938891769898947}
+  bottoms:
+  - {fileID: 4901901962323285554}
+  - {fileID: 237535073835609136}
+  - {fileID: 8421598583059016596}
+  - {fileID: 3842364964310014064}
+--- !u!114 &6751440744114867233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282969495720942947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8906fc2862becb646bafaa7bc2e95ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hats:
@@ -513,8 +536,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4043dd05d62cb4893f64f384715d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hats: []
-  bottoms: []
+  hats:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bottoms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6624047110293268912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,8 +558,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8906fc2862becb646bafaa7bc2e95ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hats: []
-  bottoms: []
+  hats:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bottoms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &5064440523533039173
 PrefabInstance:
   m_ObjectHideFlags: 0
