@@ -133,18 +133,6 @@ MonoBehaviour:
           m_StringArgument: T
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &283113848392039393
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,18 +266,6 @@ MonoBehaviour:
           m_StringArgument: H
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &463519456844125553
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,18 +397,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: P
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &698516663117193381
@@ -609,8 +573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.204834, y: 128.11023}
-  m_SizeDelta: {x: -539.6437, y: -296.5966}
+  m_AnchoredPosition: {x: 473.56372, y: 408.16937}
+  m_SizeDelta: {x: -1530.086, y: -856.715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8449529848314556280
 CanvasRenderer:
@@ -807,18 +771,6 @@ MonoBehaviour:
           m_StringArgument: D
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1588355968037513991
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.022, y: -87.8}
+  m_AnchoredPosition: {x: 158, y: -83}
   m_SizeDelta: {x: 20.9688, y: 17.8436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4417124657672709252
@@ -1295,18 +1247,6 @@ MonoBehaviour:
           m_StringArgument: J
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2579888425473958566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,18 +1648,6 @@ MonoBehaviour:
           m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &3240332015813504977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,18 +1779,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: F
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3542323359205944755
@@ -2012,7 +1928,7 @@ GameObject:
   - component: {fileID: 7663732528889885648}
   - component: {fileID: 5899627118261056385}
   m_Layer: 5
-  m_Name: SkipButton (1)
+  m_Name: AndetOrd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2035,8 +1951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140.64919, y: -86.8}
-  m_SizeDelta: {x: 75.7016, y: 30}
+  m_AnchoredPosition: {x: -106.5, y: -83}
+  m_SizeDelta: {x: 154, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8163853755562921292
 CanvasRenderer:
@@ -2059,7 +1975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.86666673, g: 0.61960787, b: 0.7294118, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2122,19 +2038,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 270997711464143722}
         m_TargetAssemblyTypeName: KeyboardScript, Assembly-CSharp
-        m_MethodName: Skip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: BogstavMangler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2621,18 +2525,6 @@ MonoBehaviour:
           m_StringArgument: L
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4561585854571133514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,7 +2719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.90188676, g: 0.6449341, b: 0.762464, a: 1}
+  m_Color: {r: 0.90196085, g: 0.6431373, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2895,18 +2787,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 4585387379930894963}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3082,8 +2962,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.208992, y: -86.8}
-  m_SizeDelta: {x: 98.418, y: 30}
+  m_AnchoredPosition: {x: 127.5, y: -83}
+  m_SizeDelta: {x: 102, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3359169159042735910
 CanvasRenderer:
@@ -3446,18 +3326,6 @@ MonoBehaviour:
           m_StringArgument: K
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6540416667011165388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,8 +3432,8 @@ MonoBehaviour:
   WordTxt: {fileID: 0}
   SpeechScript: {fileID: 0}
   VoicePlayer: {fileID: 0}
-  cooldownTime: 7
-  cooldownTimeSkip: 4
+  SpriteSpawnerScript: {fileID: 0}
+  SpriteSpawner: {fileID: 0}
 --- !u!1 &7468188187888240991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,18 +3835,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &7837614820781429378
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,18 +3963,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 7837614820781429378}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4391,18 +4235,6 @@ MonoBehaviour:
           m_StringArgument: M
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8195994703665782998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,7 +4269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000011444092, y: 0}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0}
   m_SizeDelta: {x: 0.000038147, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7151075757843257570
@@ -4468,7 +4300,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skip
+  m_text: Bogstav mangler
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4477,8 +4309,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285084854
-  m_fontColor: {r: 0.7132075, g: 0.20319685, b: 0.4104991, a: 1}
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4668,18 +4500,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: G
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 98670804109994510}
-        m_TargetAssemblyTypeName: SpriteSpawnerScript, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8311657418836919118
@@ -5000,3 +4820,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   spawnPanel: {fileID: 0}
+  clickCount: 0

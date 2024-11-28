@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class KeyboardScript : MonoBehaviour
 {
@@ -17,17 +18,18 @@ public class KeyboardScript : MonoBehaviour
     public VoiceChooser SpeechScript;
     public GameObject VoicePlayer;
     private bool isOnCooldown = false;
-    private bool isOnCooldownSkip = false;
-    public float cooldownTime = 7f;
-    public float cooldownTimeSkip = 4f;
+    private bool isOnCooldownBM = false;
+    float cooldownTime = 4f;
+    float cooldownTimeBM = 4f;
+    public SpriteSpawnerScript SpriteSpawnerScript;
+    public GameObject SpriteSpawner;
     private void Start()
     {
-        // Find the PhonemeGame script in the scene (or assign it manually in the Inspector)
-        // phonemeGame = FindObjectOfType<PhonemeGame>();
+
         VoicePlayer = GameObject.Find("Audiomanager");
         SpeechScript = VoicePlayer.GetComponent<VoiceChooser>();
-        // Clear the display panel at the start
-        
+        SpriteSpawner = GameObject.Find("SpriteSpawner");
+        SpriteSpawnerScript = SpriteSpawner.GetComponent<SpriteSpawnerScript>();
         Logic = GameObject.Find("Logic");
         wordGenerator = Logic.GetComponent<WordGenerator>();
 
@@ -52,9 +54,12 @@ public class KeyboardScript : MonoBehaviour
             wordGenerator.DanokWordTxt.text = wordGenerator.ChosenWord;
             if (!isOnCooldown)
             {
-                Debug.Log("Button pressed, invoking function!");
-                Invoke("NextWord", 5f);
-
+                if (SpriteSpawnerScript.clickCount == 8)
+                {
+                    SceneManager.LoadScene("TakeSelfieScene");
+                }
+                Invoke("NextWord", 3f);
+                SpriteSpawnerScript.OnButtonClick();
                 StartCooldown();
             }
             else
@@ -87,15 +92,20 @@ public class KeyboardScript : MonoBehaviour
             Debug.LogError("VoiceChooser is null. Cannot play audio!");
         }
     }
-    public void Skip()
+    public void BogstavMangler()
     {
 
-        if (!isOnCooldownSkip)
+        if (!isOnCooldownBM)
         {
-            Debug.Log("Skip");
+            if (SpriteSpawnerScript.clickCount == 8)
+            {
+                SceneManager.LoadScene("TakeSelfieScene");
+            }
+            Debug.Log("BogstavMangler");
             NextWord();
-            StartCooldownSkip();
-
+            StartCooldownBM();
+            SpriteSpawnerScript.OnButtonClick();
+            
         }
         else
         {
@@ -114,16 +124,16 @@ public class KeyboardScript : MonoBehaviour
         isOnCooldown = false;
         Debug.Log("Cooldown reset. Button can be pressed again.");
     }
-    private void StartCooldownSkip()
+    private void StartCooldownBM()
     {
-        isOnCooldownSkip = true;
-        Invoke("ResetCooldownSkip", cooldownTime);
+        isOnCooldownBM = true;
+        Invoke("ResetCooldownBM", cooldownTimeBM);
     }
 
-    private void ResetCooldownSkip()
+    private void ResetCooldownBM()
     {
-        isOnCooldownSkip = false;
-        Debug.Log("Cooldown Skip reset. Button can be pressed again.");
+        isOnCooldownBM = false;
+        Debug.Log("Cooldown MB reset. Button can be pressed again.");
     }
     private void ShowThumbsUp()
     {

@@ -7,7 +7,7 @@ public class SpriteSpawnerScript : MonoBehaviour
     [SerializeField] private GameObject[] spriteImages; // Array of UI images to spawn
     [SerializeField] private RectTransform spawnPanel; // The panel where the images will be spawned
 
-    private int clickCount = 0; // Tracks the number of clicks
+    public int clickCount = 0; // Tracks the number of clicks
     private List<GameObject> spawnedImages = new List<GameObject>(); // Keeps track of spawned images
     private int spriteIndex = 0; // Tracks the current sprite to use
 
