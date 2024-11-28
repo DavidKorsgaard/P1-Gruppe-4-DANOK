@@ -774,7 +774,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 55958381225173776, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 55958381225173776, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: hats.Array.data[0]
@@ -856,9 +856,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4820579575906550383, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6624047110293268912, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6624047110293268912, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: hats.Array.data[0]
