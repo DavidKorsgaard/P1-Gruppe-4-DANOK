@@ -1153,7 +1153,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GameSceneLaura
+          m_StringArgument: Mellemscene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1370092265
@@ -1447,7 +1447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 55958381225173776, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 55958381225173776, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: hats.Array.size
@@ -1531,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6624047110293268912, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6624047110293268912, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
       propertyPath: hats.Array.size
@@ -1577,9 +1577,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Sheet
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 55958381225173776, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
-    - {fileID: 6624047110293268912, guid: 53d64925e1d1b4743b00c090d64ebf32, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
