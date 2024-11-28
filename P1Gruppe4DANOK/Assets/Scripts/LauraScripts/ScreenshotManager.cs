@@ -7,7 +7,7 @@ using System.IO;
 public class ScreenshotManager : MonoBehaviour
 {
     public GameObject[] uiElementsToHide;  // UI elements to hide during capture
-    
+    public GameObject buttonToHidePermanently;  // Button that should not reappear
 
     private string screenshotFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);  // Path to Pictures folder on your PC
 
@@ -39,8 +39,12 @@ public class ScreenshotManager : MonoBehaviour
     // Method to restore UI and update gallery with the new selfie
     private void RestoreUIAndUpdateGallery()
     {
-        // Show UI elements again
+        // Show UI elements again, except the button to hide permanently
         ToggleUI(true);
+        if (buttonToHidePermanently != null)
+        {
+            buttonToHidePermanently.SetActive(false);  // Ensure this button stays hidden
+        }
 
         // Display the most recent selfie in the gallery
         string folderPath = Path.Combine(screenshotFolder, "Selfies");
@@ -60,7 +64,6 @@ public class ScreenshotManager : MonoBehaviour
 
         // Convert the texture to a sprite and assign it to the gallery image
         Sprite newSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-        
     }
 
     // Helper to load texture from file
