@@ -5,7 +5,7 @@ using TMPro; // If you're using TextMeshPro
 public class CountdownTimer : MonoBehaviour
 {
     public float countdownTime = 5f; // Time in seconds
-    public TextMeshProUGUI countdownText; // Drag your TextMeshPro UI element here
+    public TextMeshProUGUI countdownText; // to drag my TextMeshPro UI element here
     public string nextSceneName; // Name of the next scene to load
 
     private float timeRemaining;

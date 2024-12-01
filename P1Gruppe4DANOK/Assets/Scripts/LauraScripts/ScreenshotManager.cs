@@ -21,7 +21,7 @@ public class ScreenshotManager : MonoBehaviour
             Directory.CreateDirectory(folderPath);
         }
 
-        // Create a unique filename using timestamp
+        // Create a unique filename using timestamp to avoid "override"
         string fileName = $"selfie_{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.png";
         string filePath = Path.Combine(folderPath, fileName);
 
@@ -32,12 +32,12 @@ public class ScreenshotManager : MonoBehaviour
         ScreenCapture.CaptureScreenshot(filePath);
         Debug.Log($"Screenshot saved at: {filePath}");
 
-        // After a short delay, show UI and update the gallery
+        // After a short delay, show UI and update the gallery (is this nescesary?)
         Invoke(nameof(RestoreUIAndUpdateGallery), 0.5f);  // Delay to ensure screenshot is saved before updating the gallery
     }
 
     // Method to restore UI and update gallery with the new selfie
-    private void RestoreUIAndUpdateGallery()
+    private void RestoreUIAndUpdateGallery() //why in the same method? save space? 
     {
         // Show UI elements again, except the button to hide permanently
         ToggleUI(true);
@@ -49,7 +49,7 @@ public class ScreenshotManager : MonoBehaviour
         // Display the most recent selfie in the gallery
         string folderPath = Path.Combine(screenshotFolder, "Selfies");
         string[] files = Directory.GetFiles(folderPath, "*.png");
-        if (files.Length > 0)
+        if (files.Length > 0) // > 0 ?
         {
             string mostRecentFile = files[files.Length - 1];  // The most recently captured file
             UpdateGallery(mostRecentFile);
@@ -62,7 +62,7 @@ public class ScreenshotManager : MonoBehaviour
         Texture2D texture = LoadTextureFromPath(screenshotPath);
         if (texture == null) return;
 
-        // Convert the texture to a sprite and assign it to the gallery image
+        // Convert the texture to a sprite and assign it to the gallery image - is this nescesarry?
         Sprite newSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
     }
 
@@ -75,6 +75,7 @@ public class ScreenshotManager : MonoBehaviour
             return null;
         }
 
+        // *i have this function 2 times *
         byte[] fileData = File.ReadAllBytes(path);
         Texture2D texture = new Texture2D(2, 2);
         if (texture.LoadImage(fileData))

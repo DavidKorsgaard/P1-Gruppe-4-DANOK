@@ -26,7 +26,7 @@ public class DisplayScreenshot : MonoBehaviour
     // Load the most recent screenshot into the gallery
     private void LoadLatestScreenshot()
     {
-        // Get all the screenshot files in the "Selfies" folder
+        // Get all the screenshot files in the "Selfies" folder - *this is already in the other script*
         string[] files = Directory.GetFiles(screenshotFolder, "*.png");
 
         // If there are no screenshots, exit
@@ -37,7 +37,7 @@ public class DisplayScreenshot : MonoBehaviour
         }
 
         // Get the most recent screenshot (last in the list)
-        string latestScreenshot = files[files.Length - 1];
+        string latestScreenshot = files[files.Length - 1]; // i already have a string called most recentfile-which one runs?
 
         // Load and display the most recent screenshot
         DisplayImage(latestScreenshot);
@@ -64,6 +64,7 @@ public class DisplayScreenshot : MonoBehaviour
             return null;
         }
 
+        // *i have this function 2 times*
         byte[] fileData = File.ReadAllBytes(path);
         Texture2D texture = new Texture2D(2, 2);
         if (texture.LoadImage(fileData))
