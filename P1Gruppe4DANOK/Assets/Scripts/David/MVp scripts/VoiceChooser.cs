@@ -13,14 +13,15 @@ public class VoiceChooser : MonoBehaviour
     public WordGenerator WordGenerator;      // Reference til WordGenerator-scriptet
     private string[] Voices = { "_F1", "_F2", "_M1", "_M2" }; // Stemmetyper
 
-    public GameObject ThumbsUp;
-    public GameObject ThumbsDown;
+    public GameObject ThumbsUp; //reference til ThumbsUp sprite
+    public GameObject ThumbsDown; // reference til ThumbsDown sprite
     void Awake()
     {
         // Initialiser komponenter og references
         audioSource = GetComponent<AudioSource>();
         Logic = GameObject.Find("Logic");
         WordGenerator = Logic.GetComponent<WordGenerator>();
+        //loader kun lydfiler fra mappen F1
         audioClips = Resources.LoadAll<AudioClip>("Audio/F1");
 
         // Initialiser dictionary til at mappe lydklip med deres navne
@@ -43,7 +44,7 @@ public class VoiceChooser : MonoBehaviour
             return;
         }
 
-        // Vælg en tilfældig stemme
+        // Vælg en tilfældig stemme, som pt. kun er 1 stemme
         int randomIndex = Random.Range(0, Voices.Length);
         audioClipName = WordGenerator.ChosenWord + Voices[0];
         Debug.Log("Generated AudioClipName: " + audioClipName);
@@ -59,7 +60,7 @@ public class VoiceChooser : MonoBehaviour
             Debug.LogError($"AudioClip with name '{audioClipName}' not found.");
         }
     }
-
+    //Logikken til gentag lyd knappen
     public void PlaySameAudio()
     {
         if (audioSource != null && audioSource.clip != null)
