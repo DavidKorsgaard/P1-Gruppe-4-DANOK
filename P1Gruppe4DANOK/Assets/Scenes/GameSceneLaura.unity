@@ -1612,9 +1612,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 737816652}
     m_Modifications:
     - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
+      propertyPath: SpawnPanel
+      value: 
+      objectReference: {fileID: 1221845470}
+    - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
       propertyPath: spawnPanel
       value: 
       objectReference: {fileID: 1221845470}
+    - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
+      propertyPath: SpriteImages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
+      propertyPath: SpriteImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 1371942747}
+    - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
+      propertyPath: SpriteImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 553950378}
+    - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
+      propertyPath: SpriteImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 1876439332}
+    - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
+      propertyPath: SpriteImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 1159751171}
     - target: {fileID: 98670804109994510, guid: c5f047397bd3a324aa424a8c7fbea93c, type: 3}
       propertyPath: spriteImages.Array.data[0]
       value: 
