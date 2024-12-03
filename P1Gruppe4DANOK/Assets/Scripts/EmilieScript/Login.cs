@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Login : MonoBehaviour
         if (UsernameField.text == Username && LoginField.text == LoginCode)
         {
             Debug.Log("Both the username and entered Login is correct");
+            SceneManager.LoadScene("MenuScene");
         }
         else
         {
