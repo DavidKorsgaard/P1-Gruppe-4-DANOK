@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; // If you're using TextMeshPro
+using TMPro; // cus im using TextMeshPro
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float countdownTime = 5f; // Time in seconds
-    public TextMeshProUGUI countdownText; // Drag your TextMeshPro UI element here
+    public float countdownTime = 5f; // Time in seconds. f is just c#
+    public TextMeshProUGUI countdownText; // To drag my TextMeshPro UI element here
     public string nextSceneName; // Name of the next scene to load
 
     private float timeRemaining;
@@ -17,11 +17,11 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
-        // Update the countdown timer
+        // here the program checks if timeRemaining is greater than 0 and will keep counting down in accordance to time.deltaTime if so. when equal to zero the next scene is loaded
         if (timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime;
-            countdownText.text = Mathf.Ceil(timeRemaining).ToString(); // Display whole numbers
+            timeRemaining -= Time.deltaTime; // -= allows the Mathf.Ceil function to return subtracted numbers
+            countdownText.text = Mathf.Ceil(timeRemaining).ToString(); // Mathf.Ceil returns the smallest number(float) greater than or equal to f wich here is time remaining. 
         }
         else
         {
@@ -29,6 +29,7 @@ public class CountdownTimer : MonoBehaviour
         }
     }
 
+    //method to load next scene 
     void LoadNextScene()
     {
         SceneManager.LoadScene(nextSceneName);
