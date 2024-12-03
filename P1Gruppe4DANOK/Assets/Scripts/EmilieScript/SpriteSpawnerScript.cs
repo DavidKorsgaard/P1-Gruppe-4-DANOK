@@ -5,55 +5,57 @@ using UnityEngine;
 public class SpriteSpawnerScript : MonoBehaviour
 {
     public GameObject[] SpriteImages; // Array of prefab images
-    public RectTransform SpawnPanel; // Panel where images will spawn
+    public RectTransform SpawnPanel; // Panel where images will spawn, RectTransform handles position and addtional Ui features
 
     public int clickCount = 0; // Tracks number of clicks
-    private int spriteIndex = 0; // Tracks the current sprite to use
+    private int SpriteIndex = 0; // Tracks the current sprite to use
 
     public void OnButtonClick()
     {
-        //click count
+        //Click counter with post-increment 
         clickCount++;
 
-        // Every second click, spawn an image
+        // Every second click, spawn an image (modulus operator)
         if (clickCount % 2 == 0)
         {
-    
-             SpawnImage();
-            
+             SpawnImage();     
         }
     }
-
 
     private void SpawnImage()
     {
         if (SpriteImages.Length == 0) return;
 
-        // Calculate the world-space corners of the spawn panel
+        // Calculate the corners of the spawn panel
         Vector3[] corners = new Vector3[4];
         SpawnPanel.GetWorldCorners(corners);
 
-        // Generate a random position within the bounds of the panel
-        Vector3 spawnPosition = new Vector3(
+        // Generate a random position in the spawn panel
+        Vector3 SpawnPosition = new Vector3
+        (
             Random.Range(corners[0].x, corners[2].x), // Random X between bottom left and top right corners
-            Random.Range(corners[0].y, corners[2].y), // -||-
+            Random.Range(corners[0].y, corners[2].y), // Random is not true random but a pseudo-random number generator
             corners[0].z
         );
 
-        // Instantiate the sprite image
-        GameObject NewImage = Instantiate(SpriteImages[spriteIndex], spawnPosition, Quaternion.identity, SpawnPanel);
-    
+        // Instantiate a new gameobject, using prefabs from SpriteImage
+        GameObject NewImage = Instantiate(SpriteImages[SpriteIndex], SpawnPosition, Quaternion.identity, SpawnPanel);
+
+        //SpriteImages[SpriteIndex] tells Instantiate what image to spawn,
+            // - spawnpostion is random coordinates in the spawnpanel
+            // - Quaternion.identity: This quaternion corresponds to "no rotation"
+            // - SpawnPanel the area where 
+
         // Ensure the image stays in its local hierarchy
-        RectTransform rectTransform = NewImage.GetComponent<RectTransform>();
-            
+        RectTransform ImageTransform = NewImage.GetComponent<RectTransform>(); //A Unity method used to access any component attached to the GameObject
+
         // Convert to local position based on spawnPanel
-        rectTransform.anchoredPosition = SpawnPanel.InverseTransformPoint(spawnPosition);
+        ImageTransform.anchoredPosition = SpawnPanel.InverseTransformPoint(SpawnPosition); //
 
-        // Update the image index (loop back to the start if needed)
-        spriteIndex = (spriteIndex + 1) % SpriteImages.Length;
-      
-    }
+        //anchored position is used to position a UI element within its parent container
+        //Transforms that world space position into local position in SpawnPanel
 
-    
-    
+        // Updating the image index with pre-increment
+        SpriteIndex = ++SpriteIndex;
+    }   
 }
