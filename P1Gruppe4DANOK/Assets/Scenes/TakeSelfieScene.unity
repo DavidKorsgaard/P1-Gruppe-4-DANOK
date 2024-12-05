@@ -1272,12 +1272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f18e58586a648fea5346553d1c4494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteImages:
+  SpriteImages:
   - {fileID: 1719388560}
   - {fileID: 1658059066}
   - {fileID: 2124498888}
   - {fileID: 1575858193}
-  respawnPanel: {fileID: 1445367927}
+  RespawnPanel: {fileID: 1445367927}
 --- !u!1 &1488766757
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,14 @@ public class Login : MonoBehaviour
     public TMP_InputField LoginField;
     public TMP_Text WarningFeedback;
 
-    //Setting a standard username and code for the demonstration
+    //We're making a standard username and code for the demonstration
     private string Username = "DANOKROCKS";
     private string LoginCode = "Medialogi";
 
     public void ValidateLogin()
     {
 
-        // validate input by comparing innput with standard
+        // validates input by comparing input with standard
         if (UsernameField.text == Username && LoginField.text == LoginCode)
         {
             Debug.Log("Both the username and entered Login is correct");
