@@ -1554,7 +1554,7 @@ GameObject:
   - component: {fileID: 2142528313}
   - component: {fileID: 2142528314}
   m_Layer: 0
-  m_Name: GalleryScriptManager
+  m_Name: DisplayScreenshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

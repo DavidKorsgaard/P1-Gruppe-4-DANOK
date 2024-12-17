@@ -1407,7 +1407,6 @@ MonoBehaviour:
   uiElementsToHide:
   - {fileID: 1954581501}
   - {fileID: 444136274}
-  - {fileID: 2082962224}
   - {fileID: 2137428719}
   buttonToHidePermanently: {fileID: 2082962224}
 --- !u!4 &1626393319
