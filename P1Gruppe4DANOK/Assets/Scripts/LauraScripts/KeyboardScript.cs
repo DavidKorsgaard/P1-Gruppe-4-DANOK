@@ -22,9 +22,8 @@ public class KeyboardScript : MonoBehaviour
     
     //Alt til cooldowns på buttons
     private bool isOnCooldown = false;
-    private bool isOnCooldownBM = false;
     float cooldownTime = 4f;
-    float cooldownTimeBM = 4f;
+   
 
     //Referencer til SpriteSpawner
     public SpriteSpawnerScript SpriteSpawnerScript;
