@@ -101,7 +101,7 @@ public class KeyboardScript : MonoBehaviour
     public void BogstavMangler()
     {
 
-        if (!isOnCooldownBM)
+        if (!isOnCooldown)
         {
             if (SpriteSpawnerScript.clickCount == 8)
             {
@@ -109,7 +109,7 @@ public class KeyboardScript : MonoBehaviour
             }
             Debug.Log("BogstavMangler");
             NextWord();
-            StartCooldownBM();
+            StartCooldown();
             SpriteSpawnerScript.OnButtonClick();
             
         }
@@ -131,17 +131,7 @@ public class KeyboardScript : MonoBehaviour
         isOnCooldown = false;
         Debug.Log("Cooldown reset. Button can be pressed again.");
     }
-    private void StartCooldownBM()
-    {
-        isOnCooldownBM = true;
-        Invoke("ResetCooldownBM", cooldownTimeBM);
-    }
-
-    private void ResetCooldownBM()
-    {
-        isOnCooldownBM = false;
-        Debug.Log("Cooldown MB reset. Button can be pressed again.");
-    }
+   
     //logikken på thumbsup/thumbsdown knapperne
     private void ShowThumbsUp()
     {

@@ -49,7 +49,7 @@ public class VoiceChooser : MonoBehaviour
         audioClipName = WordGenerator.ChosenWord + Voices[0];
         Debug.Log("Generated AudioClipName: " + audioClipName);
 
-        // Spil lydklippet, hvis det findes i mappen
+        // Spil lydklippet, hvis det findes i dictionariet
         if (audioClipMap.TryGetValue(audioClipName, out AudioClip clip))
         {
             audioSource.clip = clip;
