@@ -30,14 +30,16 @@ public class WordGenerator : MonoBehaviour
 
     void Start()
     {
+        //placeholder for ordet der mangler
         DanokWordTxt.text = "ba?i";
         VoicePlayer = GameObject.Find("Audiomanager");
         SpeechScript = VoicePlayer.GetComponent<VoiceChooser>();
         
 
-
+        //laver et nyt array med længden af alle ord i audioclips
         DanokWords = new string[SpeechScript.audioClips.Length];
 
+        //en for-lykke der ændre navnet på alle audioclipsne
         for (int i = 0; i < SpeechScript.audioClips.Length; i++)
         {
             // Få navnet på lydklippet

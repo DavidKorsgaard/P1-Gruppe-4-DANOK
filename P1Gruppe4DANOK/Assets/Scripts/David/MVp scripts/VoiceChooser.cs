@@ -21,13 +21,16 @@ public class VoiceChooser : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         Logic = GameObject.Find("Logic");
         WordGenerator = Logic.GetComponent<WordGenerator>();
-        //loader kun lydfiler fra mappen F1
+        //loader kun lydfiler fra mappen F1 da systemet kun virker med få lydklip
         audioClips = Resources.LoadAll<AudioClip>("Audio/F1");
 
-        // Initialiser dictionary til at mappe lydklip med deres navne
+        // Initialiser dictionary hvor at alle de modificerde lydklip skal være
         audioClipMap = new Dictionary<string, AudioClip>();
+        //for-lykke med alle Audioclip datatyper i arrayet Audioclips
         foreach (var audioClip in audioClips)
         {
+            //hvis der ikke er et entry i dictionarien med navnet af audioklippet
+            //indsætter den et entry med stringnavnet af audioclippet og audioclippet
             if (!audioClipMap.ContainsKey(audioClip.name))
             {
                 audioClipMap.Add(audioClip.name, audioClip);
@@ -38,6 +41,7 @@ public class VoiceChooser : MonoBehaviour
     
     public void PlayAudio()
     {
+        //nullreference avoider
         if (WordGenerator == null)
         {
             Debug.LogError("WordGenerator is not assigned.");
