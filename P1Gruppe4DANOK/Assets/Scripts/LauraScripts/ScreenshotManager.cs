@@ -28,6 +28,9 @@ public class ScreenshotManager : MonoBehaviour
         ToggleUI(false);
 
         // Capture the screenshot and save it
+        /* Virker ved at bruge ScreenCature, som er indbygget i unity, tager den et screenshot, og returnere det igennem variablen filePath som den har
+         * lavet oven over */
+        
         ScreenCapture.CaptureScreenshot(filePath);
         Debug.Log($"Screenshot saved at: {filePath}");
 

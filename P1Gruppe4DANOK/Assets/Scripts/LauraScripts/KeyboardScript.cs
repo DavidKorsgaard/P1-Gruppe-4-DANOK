@@ -86,7 +86,7 @@ public class KeyboardScript : MonoBehaviour
 
     }
     
-    //Finde rdet næste ord og lydfil
+    //Finder det næste ord og lydfil
     void NextWord()
     {
         wordGenerator.WordChooser();
