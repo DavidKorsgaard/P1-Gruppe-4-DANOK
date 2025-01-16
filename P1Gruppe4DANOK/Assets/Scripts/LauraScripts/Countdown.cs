@@ -17,11 +17,14 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
-        // here the program checks if timeRemaining is greater than 0 and will keep counting down in accordance to time.deltaTime if so. when equal to zero the next scene is loaded
+        // here the program checks if timeRemaining is greater than 0 and will keep counting down in accordance to time.deltaTime if so.
+        // when equal to zero the next scene is loaded
         if (timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime; // -= allows the Mathf.Ceil function to return subtracted numbers
-            countdownText.text = Mathf.Ceil(timeRemaining).ToString(); // Mathf.Ceil returns the smallest number(float) greater than or equal to f wich here is time remaining. 
+            timeRemaining -= Time.deltaTime; 
+            // -= allows the Mathf.Ceil function to return subtracted numbers
+            countdownText.text = Mathf.Ceil(timeRemaining).ToString(); //to string so it converts to text 
+            // Mathf.Ceil returns the smallest number(float) greater than or equal to f wich here is time remaining. 
         }
         else
         {

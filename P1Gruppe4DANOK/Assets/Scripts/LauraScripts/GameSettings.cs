@@ -43,23 +43,18 @@ public class GameSettings : MonoBehaviour
         //default values for sliders 
         volumeSlider.value = 50;
 
-        //display update wordcount
+        //display update wordcount. inactive
         UpdateWordCount();
     }
-
     private void Calibrate()
     {
-        Debug.Log("Starter Kalibrering");
-        //add logic to start ..
+        Debug.Log("Starter Kalibrering");//add logic to start ..
     }
-
     private void StartTest()
     {
-        Debug.Log("Starter Test");
-        //add logic to start actual tes...!
-
-        //program cheks what consonant is selected
-        if (IsFirstConsonantSelected())
+        Debug.Log("Starter Test"); //add logic to start actual tes...!
+        
+        if (IsFirstConsonantSelected()) //program cheks what consonant is selected
         {
             Debug.Log("Brugeren skal identificere første konsonant.");
         }
@@ -67,10 +62,7 @@ public class GameSettings : MonoBehaviour
         {
             Debug.Log("Brugeren skal identificere anden konsonant.");
         }
-           
     }
-
-
     public void UpdateWordCount()
     {
         int wordCount = 0; //start counting from zero
@@ -98,9 +90,7 @@ public class GameSettings : MonoBehaviour
                 wordCount++;
             }
         }
-
-        //updates wordcount display
-        wordCountText.text = "Antal ord: " + wordCount;
+        wordCountText.text = "Antal ord: " + wordCount; //updates wordcount display 
 
     }
 
